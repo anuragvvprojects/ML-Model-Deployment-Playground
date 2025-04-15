@@ -15,7 +15,7 @@ This repository demonstrates how to build and deploy a minimal machine learning 
 ---
 
 ## 📁 Project Structure
-
+ 
 ```
 ml_deploy_demo/
 │
