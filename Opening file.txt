@@ -1,4 +1,0 @@
-This is an opening file
--- changed for backdrop --
--- third commit ---
--- forth commit ---
