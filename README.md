@@ -23,6 +23,7 @@ ml_deploy_demo/
 ├── app_gradio.py      # Gradio-based GUI interface
 ├── requirements.txt   # All Python dependencies
 └── README.md          # Project documentation
+... More files excluded for confidentiality purpose.
 ```
 ---
 

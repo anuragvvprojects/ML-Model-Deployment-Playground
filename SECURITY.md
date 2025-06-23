@@ -1,5 +1,4 @@
 # Security Policy
-
 We take security seriously and appreciate responsible disclosure.
 
 ## Reporting a Vulnerability
