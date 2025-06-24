@@ -11,3 +11,7 @@ def predict(text):
 
 gr.Interface(fn=predict, inputs="text", outputs="text", title="Sentiment Classifier").launch()
 
+
+#def predict(text):
+#    result = classifier(text)[0]
+#    return f"{result['label']} ({round(result['score'], 3)})"
