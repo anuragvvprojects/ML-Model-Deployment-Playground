@@ -13,6 +13,14 @@ class ModelService:
         self._model = artifact["model"]
         self._version = artifact.get("version", "unknown")
 
+    def predict(self, features) -> Tuple[int, float]:
+        import numpy as np
+        X = np.array(features, dtype=float).reshape(1, -1)
+        proba_arr = self._model.predict_proba(X)[0]
+        pred = int(proba_arr.argmax())
+        proba = float(proba_arr[pred])
+        return pred, proba
+
     @property
     def ready(self) -> bool:
         return self._model is not None
@@ -21,10 +29,4 @@ class ModelService:
     def version(self) -> str:
         return self._version
 
-    def predict(self, features) -> Tuple[int, float]:
-        import numpy as np
-        X = np.array(features, dtype=float).reshape(1, -1)
-        proba_arr = self._model.predict_proba(X)[0]
-        pred = int(proba_arr.argmax())
-        proba = float(proba_arr[pred])
-        return pred, proba
+
