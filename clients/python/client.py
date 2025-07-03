@@ -5,3 +5,7 @@ if __name__ == "__main__":
     r = requests.post(URL, json=payload, timeout=10)
     r.raise_for_status()
     print("Response:", r.json())
+if __name__ == "__main__":
+    r = requests.post(URL, json=payload, timeout=10)
+    r.raise_for_status()
+    print("Response:", r.json())

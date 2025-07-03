@@ -19,3 +19,8 @@ bash clients/curl/batch_predict.sh
 ```
 
 > Change the base URL inside files if your API isn't on localhost.
+
+## Python (`clients/python/client.py`)
+```bash
+python clients/python/client.py
+
