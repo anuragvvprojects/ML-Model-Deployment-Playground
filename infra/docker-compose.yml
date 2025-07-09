@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=/app/model/artifacts/model.joblib
+      - LOG_LEVEL=INFO
+    restart: unless-stopped

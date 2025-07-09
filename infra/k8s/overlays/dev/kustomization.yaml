@@ -1,0 +1,4 @@
+resources:
+  - ../../k8s
+patches:
+  - path: deployment-patch.yaml

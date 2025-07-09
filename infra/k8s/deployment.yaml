@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minimal-deploy-api
+  labels:
+    app: minimal-deploy-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minimal-deploy-api
+  template:
+    metadata:
+      labels:
+        app: minimal-deploy-api
+    spec:
+      containers:
+        - name: api
+          image: your-docker-repo/minimal-deploy-pipeline:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MODEL_PATH
+              value: /app/model/artifacts/model.joblib
+            - name: LOG_LEVEL
+              value: INFO
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10

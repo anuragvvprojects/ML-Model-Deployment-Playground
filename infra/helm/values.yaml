@@ -1,0 +1,7 @@
+image:
+  repository: your-docker-repo/minimal-deploy-pipeline
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
