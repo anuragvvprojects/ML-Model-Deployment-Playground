@@ -10,3 +10,22 @@ def load_dataset(test_size: float = 0.2, random_state: int = 42):
         X, y, test_size=test_size, random_state=random_state, stratify=y
     )
     return (X_train, y_train), (X_test, y_test)
+    
+def load_dataset(test_size: float = 0.2, random_state: int = 42):
+    iris = load_iris(as_frame=True)
+    X = iris.data
+    y = iris.target
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=test_size, random_state=random_state, stratify=y
+    )
+    return (X_train, y_train), (X_test, y_test)
+    
+    
+def load_dataset(test_size: float = 0.2, random_state: int = 42):
+    iris = load_iris(as_frame=True)
+    X = iris.data
+    y = iris.target
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=test_size, random_state=random_state, stratify=y
+    )
+    return (X_train, y_train), (X_test, y_test)
