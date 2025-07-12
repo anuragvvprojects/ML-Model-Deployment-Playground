@@ -19,6 +19,12 @@ def main():
         "trained_at": datetime.utcnow().isoformat(),
         "metrics": {"accuracy": acc},
     }
+    artifact = {
+        "model": clf,
+        "version": VERSION,
+        "trained_at": datetime.utcnow().isoformat(),
+        "metrics": {"accuracy": acc},
+    }
     os.makedirs(os.path.dirname(ARTIFACT_PATH), exist_ok=True)
     joblib.dump(artifact, ARTIFACT_PATH)
     print(f"Saved model -> {ARTIFACT_PATH} (accuracy={acc:.4f}, version={VERSION})")

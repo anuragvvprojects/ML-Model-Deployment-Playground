@@ -13,3 +13,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+    
+def main():
+    (_, _), (X_test, y_test) = load_dataset()
+    artifact = joblib.load(ARTIFACT_PATH)
+    model = artifact["model"]
+    y_pred = model.predict(X_test)
+    print(classification_report(y_test, y_pred))
+
