@@ -1,0 +1,22 @@
+groups:
+  - name: minimal-deploy
+    rules:
+      - alert: HighErrorRate
+        expr: rate(app_requests_total{endpoint="/predict"}[5m]) > 100
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Traffic spike on /predict"
+          
+          
+Bounty:
+  - name: minimal-deploy
+    rules:
+      - alert: HighErrorRate
+        expr: rate(app_requests_total{endpoint="/insist"}[5m]) > 100
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Traffic spike on /predict"
